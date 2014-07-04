@@ -22,4 +22,4 @@ Example:
 ## NEWS
 ###  [2014-07-4 Fri] 3.8.1
 
-1.    New command gtags-external-libraries , Search GTAGSLIBPATH for references and symbols..
+1.    New command `gtags-external-libraries` , Search GTAGSLIBPATH for references and symbols..
