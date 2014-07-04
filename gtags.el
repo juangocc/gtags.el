@@ -37,6 +37,9 @@
 ;;	(add-to-list 'load-path "~/.emacs.d")
 ;;	(autoload 'gtags-mode "gtags" "" t)
 ;;
+;;      (gtags-external-libraries "/usr/include:/usr/lib")
+;;
+;;
 ;; If you hope gtags-mode is on in c-mode then please add c-mode-hook to your
 ;; $HOME/.emacs like this.
 ;;
@@ -75,6 +78,15 @@
   "Non-nil if Gtags mode is enabled.")
 (make-variable-buffer-local 'gtags-mode)
 
+;; Set GTAGSLIBPATH for include libraries search for references and symbols.
+(defun gtags-external-libraries (include-directories)
+  "Include external directories for GNU Global Tags (GTAGSLIBPATH)"
+  (interactive)
+  (let (var1)
+    (setenv "GTAGSLIBPATH" include-directories)
+    (message (format "Included libraries for gtags => %s" include-directories))
+    ))
+    
 ;;;
 ;;; Customizing gtags-mode
 ;;;
